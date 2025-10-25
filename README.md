@@ -27,16 +27,6 @@ Tokenizer	SentencePiece
 Version Control	Git & GitHub
 ⚙️ Installation & Setup
 
-Follow these steps to run the project locally:
-
-1️⃣ Clone the Repository
-git clone https://github.com/<your-username>/TextSummarizer_Pro.git
-cd TextSummarizer_Pro
-
-2️⃣ Create Virtual Environment (optional but recommended)
-python -m venv venv
-venv\Scripts\activate   # For Windows
-
 🧠 Example Output
 
 Input Text:
@@ -57,3 +47,30 @@ Feel free to use, modify, and distribute it with proper attribution.
 Aadhithya Panduru
 
 B.Tech Artificial Intelligence and Data Science
+# TextSummarizer_Pro
+
+TextSummarizer_Pro is an AI-powered text summarization app that allows you to quickly summarize large pieces of text or documents.
+
+## Features
+- Summarizes any text quickly and accurately
+- Adjustable summary length
+- Upload `.txt` files or paste text directly
+- Download generated summaries
+
+## How to Use
+1. Paste your text or upload a `.txt` file.
+2. Choose your desired summary length.
+3. View the summary side by side with the original text.
+4. Download the summary if needed.
+
+## Live Demo
+Try the app online here: [TextSummarizer Pro](https://textsummarizerpro-kprezzakstzddpnpounb5x.streamlit.app/)
+
+## Installation (Optional)
+To run locally:
+```bash
+git clone https://github.com/panduru-aadhithya/TextSummarizer_Pro.git
+cd TextSummarizer_Pro
+pip install -r requirements.txt
+streamlit run app.py
+
