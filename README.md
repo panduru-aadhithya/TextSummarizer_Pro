@@ -36,36 +36,6 @@ cd TextSummarizer_Pro
 2️⃣ Create Virtual Environment (optional but recommended)
 python -m venv venv
 venv\Scripts\activate   # For Windows
-# or
-source venv/bin/activate  # For Mac/Linux
-
-3️⃣ Install Dependencies
-pip install -r requirements.txt
-
-4️⃣ Run the App
-streamlit run app.py
-
-
-Your app will open automatically in the browser (usually at http://localhost:8501).
-
-☁️ Deploying to Streamlit Cloud
-
-You can make the app publicly accessible online by following these steps:
-
-Push the project folder to your GitHub repository.
-
-Go to https://share.streamlit.io
-.
-
-Log in with your GitHub account.
-
-Select your repository (e.g., TextSummarizer_Pro).
-
-Choose app.py as the main entry file.
-
-Click Deploy 🚀.
-
-Your project will be live instantly and anyone can test it using your public link.
 
 🧠 Example Output
 
@@ -85,4 +55,5 @@ Feel free to use, modify, and distribute it with proper attribution.
 👨‍💻 Developed By
 
 Aadhithya Panduru
+
 B.Tech Artificial Intelligence and Data Science
