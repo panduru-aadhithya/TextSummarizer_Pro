@@ -13,6 +13,20 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# >>> Added for memory optimization <<<
+from transformers import pipeline
+
+@st.cache_resource
+def load_summarizer():
+    """Load summarization model only once."""
+    summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+    return summarizer
+
+summarizer_model = load_summarizer()
+MAX_CHARS = 3000  # prevent very long text inputs
+# >>> End memory optimization <<<
+
+
 # ----------------------- SIDEBAR ----------------------------
 with st.sidebar:
     st.image("https://cdn-icons-png.flaticon.com/512/4712/4712109.png", width=100)
@@ -60,6 +74,13 @@ elif option == "Upload File":
         else:
             text_input = uploaded_file.read().decode("utf-8")
 
+# >>> Added for memory optimization <<<
+# Truncate text if it's too long to prevent memory overload
+if len(text_input) > MAX_CHARS:
+    text_input = text_input[:MAX_CHARS]
+    st.warning(f"⚠️ Text truncated to {MAX_CHARS} characters to prevent memory issues.")
+# >>> End memory optimization <<<
+
 # ----------------------- SUMMARY SETTINGS ----------------------
 st.markdown("### ⚙️ Summary Settings")
 summary_length = st.select_slider(
@@ -87,11 +108,21 @@ if st.button("✨ Generate Summary"):
             progress.progress(i + 1)
 
         st.write("🔍 Processing your text...")
-        summary = summarize_text(
-            text_input,
-            min_length=length_map[summary_length][0],
-            max_length=length_map[summary_length][1]
-        )
+
+        # >>> Added for memory optimization <<<
+        # Use cached summarizer model and summarize in chunks for long text
+        def summarize_in_chunks(text, chunk_size=800):
+            summaries = []
+            for i in range(0, len(text), chunk_size):
+                chunk = text[i:i + chunk_size]
+                result = summarizer_model(chunk, max_length=length_map[summary_length][1],
+                                          min_length=length_map[summary_length][0],
+                                          do_sample=False)[0]['summary_text']
+                summaries.append(result)
+            return " ".join(summaries)
+
+        summary = summarize_in_chunks(text_input)
+        # >>> End memory optimization <<<
 
         progress.progress(100)
         st.success("✅ Summary generated successfully!")
