@@ -1,5 +1,5 @@
-gradio
-transformers
+gradio==4.44.0
+transformers==4.57.0
 torch
 textstat
 PyPDF2
