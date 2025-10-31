@@ -20,3 +20,4 @@ def summarize_text(text, max_length=250, min_length=50):
         summaries.append(summary)
 
     return " ".join(summaries)
+
