@@ -68,12 +68,4 @@ Try the app here:
 https://huggingface.co/spaces/AADHITHYA123/textsummarizer-pro
 
 
-## Installation (Optional)
-To run locally:
-```bash
-git clone https://github.com/panduru-aadhithya/TextSummarizer_Pro.git
-cd TextSummarizer_Pro
-pip install -r requirements.txt
-streamlit run app.py
-
 
