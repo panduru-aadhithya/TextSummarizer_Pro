@@ -63,8 +63,10 @@ TextSummarizer_Pro is an AI-powered text summarization app that allows you to qu
 3. View the summary side by side with the original text.
 4. Download the summary if needed.
 
-## Live Demo
-Try the app online here: [TextSummarizer Pro](https://textsummarizerpro-kprezzakstzddpnpounb5x.streamlit.app/)
+## ✅ Live Demo
+Try the app here:
+https://huggingface.co/spaces/AADHITHYA123/textsummarizer-pro
+
 
 ## Installation (Optional)
 To run locally:
@@ -73,4 +75,5 @@ git clone https://github.com/panduru-aadhithya/TextSummarizer_Pro.git
 cd TextSummarizer_Pro
 pip install -r requirements.txt
 streamlit run app.py
+
 
