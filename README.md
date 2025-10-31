@@ -11,8 +11,6 @@ It allows users to summarize large paragraphs or documents into concise, meaning
 
 📜 Summary History Tracking — view your recent summaries instantly
 
-💾 Download Option — save your generated summaries as .txt files
-
 🌐 Deployable Anywhere — works on Streamlit Cloud and Hugging Face Spaces
 
 💡 Fast, Lightweight, and User-Friendly UI
@@ -55,17 +53,16 @@ TextSummarizer_Pro is an AI-powered text summarization app that allows you to qu
 - Summarizes any text quickly and accurately
 - Adjustable summary length
 - Upload `.txt` files or paste text directly
-- Download generated summaries
 
 ## How to Use
 1. Paste your text or upload a `.txt` file.
 2. Choose your desired summary length.
 3. View the summary side by side with the original text.
-4. Download the summary if needed.
 
 ## ✅ Live Demo
 Try the app here:
 https://huggingface.co/spaces/AADHITHYA123/textsummarizer-pro
+
 
 
 
